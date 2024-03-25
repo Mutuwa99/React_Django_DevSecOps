@@ -213,7 +213,7 @@ jobs:
             docker pull docker.io/mutuwa12/backend:latest
             docker run -d --name backend -p 8000:8000 docker.io/mutuwa12/backend:latest
 
-    deploy_frontend:
+  deploy_frontend:
     needs: trivy_scan_frontend
     runs-on: ubuntu-latest
     environment: 
