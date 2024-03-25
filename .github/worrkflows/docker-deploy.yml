@@ -3,7 +3,7 @@ name:  docker CICD
 on:
   push:
     branches:
-      - testing  
+      - main  
 
 jobs:
 
