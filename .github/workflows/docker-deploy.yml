@@ -112,7 +112,7 @@ jobs:
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME}}
       DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      imagename: 'bacfrontendkend'
+      imagename: 'frontend'
       registry: 'docker.io'
       imageTag: 'latest'
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} 
