@@ -173,7 +173,7 @@ jobs:
 
       - name: Scan Docker Image
         run: |
-          trivy_report=$(trivy --format json docker.io/mutuwa12/frontend :latest)
+          trivy_report=$(trivy --format json docker.io/mutuwa12/frontend:latest)
           echo "$trivy_report"
 
           # Check if there are any vulnerabilities with severity "CRITICAL"
