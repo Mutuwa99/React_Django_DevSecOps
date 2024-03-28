@@ -105,8 +105,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tutorial',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'mutuwa',
+        'PASSWORD': 'Mutuwa#@99',
         'HOST': 'noble-mutuwa.com',
         'PORT': '5432' #default port for post
     }
