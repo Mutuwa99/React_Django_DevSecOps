@@ -7,6 +7,7 @@ import $ from 'jquery';
 function View() {
     const location = useLocation();
     const [editedData, setEditedData] = useState({
+        id: location.state?.tickinfo.id,
         name: location.state?.tickinfo.name,
         description: location.state?.tickinfo.description,
         status: location.state?.tickinfo.status
@@ -19,6 +20,8 @@ function View() {
 
     function handleSave(id){ // Define handleSave as a function that returns a function
         // Perform save operation, e.g., send editedData to server
+        console.log("thi is " , id)
+        console.log("also id", editedData.id)
         console.log("Saving:", editedData);
         // Add your save logic here
         $.ajax({
