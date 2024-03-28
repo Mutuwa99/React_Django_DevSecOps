@@ -137,7 +137,7 @@ def create_ticket(request):
         return JsonResponse({'success': False, 'message': 'Method not allowed'}, status=405)
 
 @csrf_exempt
-def edit_ticket(request): 
+def edit_ticket(request, id): 
 
     if request.method == 'POST':
         data = json.loads(request.body)

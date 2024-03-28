@@ -29,7 +29,7 @@ function CreateTicket() { // Changed component name from View to CreateTicket
             success: (response) => {
                 console.log('Response:', response);
                 
-                showToast('Hey', 'item has been removed');
+                showToast('Hey', 'item has been added');
             },
             error: (xhr, status, error) => {
                 console.error('Error:', error);
