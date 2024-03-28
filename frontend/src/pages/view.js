@@ -17,7 +17,7 @@ function View() {
         setEditedData({ ...editedData, [name]: value });
     };
 
-    const handleSave = (id) => {
+    const handleSave = (id) => () => { // Define handleSave as a function that returns a function
         // Perform save operation, e.g., send editedData to server
         console.log("Saving:", editedData);
         // Add your save logic here
@@ -28,7 +28,6 @@ function View() {
             data: JSON.stringify(editedData), // Send the editedData as JSON
             success: (response) => {
                 console.log('Response:', response);
-                
                 showToast('Hey', 'item has been edited');
             },
             error: (xhr, status, error) => {
@@ -40,7 +39,7 @@ function View() {
 
     return (
         <>
-         < Menu></Menu>
+         <Menu></Menu>
         <div className="view-container">
             <h2>Edit Ticket</h2>
             <div className="form-group">
@@ -60,9 +59,8 @@ function View() {
                     <option value="invalid">Invalid</option>
                 </select>
             </div>
-            <button  className="savetic" onClick={handleSave(editedData.id)}>Save</button>
+            <button className="savetic" onClick={handleSave(editedData.id)}>Save</button>
         </div>
-
         </>
     );
 }
