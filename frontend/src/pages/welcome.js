@@ -12,7 +12,7 @@ const Welcome = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     $.ajax({
-      url: 'http://127.0.0.1:8000/api/auth/login',
+      url: 'http://noble-mutuwa.com:8000/api/auth/login',
       method: 'POST',
       contentType: 'application/json',
       data: JSON.stringify({ username, password }),

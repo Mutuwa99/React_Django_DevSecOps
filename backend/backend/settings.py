@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Add your React app's URL
+    "http://noble-mutuwa.com:3000",  # Add your React app's URL
     # Add more origins if needed
 ]
 
@@ -107,7 +107,7 @@ DATABASES = {
         'NAME': 'tutorial',
         'USER': '',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        'HOST': 'noble-mutuwa.com',
         'PORT': '5432' #default port for post
     }
 }

@@ -18,7 +18,7 @@ function Inprogress() {
   useEffect(() => {
     // Fetch ticket information
     $.ajax({
-      url: 'http://127.0.0.1:8000/api/tickets/all',
+      url: 'http://noble-mutuwa.com:8000/api/tickets/all',
       method: 'POST',
       contentType: 'application/json',
       success: (response) => {

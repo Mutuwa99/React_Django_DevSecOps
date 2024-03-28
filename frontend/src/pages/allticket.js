@@ -20,7 +20,7 @@ function Alltick() {
     console.log("this is a record id ", id )
 
     $.ajax({
-        url: `http://127.0.0.1:8000/api/tickets/delete/${id}/`,
+        url: `http://noble-mutuwa.com:8000/api/tickets/delete/${id}/`,
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ id }),
@@ -44,7 +44,7 @@ function Alltick() {
   function handleView(id){
 
     $.ajax({
-        url: `http://127.0.0.1:8000/api/tickets/view/${id}/`,
+        url: `http://noble-mutuwa.com:8000/api/tickets/view/${id}/`,
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ id }),
@@ -76,7 +76,7 @@ function Alltick() {
   useEffect(() => {
 
     $.ajax({
-      url: 'http://127.0.0.1:8000/api/tickets/all',
+      url: 'http://noble-mutuwa.com:8000/api/tickets/all',
       method: 'POST',
       contentType: 'application/json',
       success: (response) => {
