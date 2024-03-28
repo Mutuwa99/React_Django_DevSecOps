@@ -240,7 +240,7 @@ jobs:
             docker stop backend  || true
             docker rm backend || true
             docker pull docker.io/mutuwa12/frontend:latest
-            docker run -d --name frontend -p 8000:8000 docker.io/mutuwa12/frontend:latest
+            docker run -d --name frontend -p 3000:3000 docker.io/mutuwa12/frontend:latest
 
                 
             
