@@ -96,6 +96,13 @@ jobs:
       - name: Checkout Code Mutuwa code
         uses: actions/checkout@v2
 
+              # Remove old Docker image
+      - name: Remove old Docker image
+        run: |
+          docker stop backend || true
+          docker rm frontend || true
+          docker rmi ${registry}/${DOCKERHUB_USERNAME}/backend:${imageTag} || true
+
       - name: Build Noble Django Docker Image
         run: |
           docker build -t ${registry}/${DOCKERHUB_USERNAME}/${imagename}:${imageTag} ./backend/.
@@ -123,6 +130,12 @@ jobs:
     steps:
       - name: Checkout Code Mutuwa code
         uses: actions/checkout@v2
+              # Remove old Docker image
+      - name: Remove old Docker image
+        run: |
+          docker stop frontend || true
+          docker rm frontend || true
+          docker rmi ${registry}/${DOCKERHUB_USERNAME}/frontend:${imageTag} || true
 
       - name: Build Noble Django Docker Image
         run: |
