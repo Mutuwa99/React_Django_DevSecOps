@@ -237,8 +237,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            docker stop backend  || true
-            docker rm backend || true
+            docker stop frontend  || true
+            docker rm frontend || true
             docker pull docker.io/mutuwa12/frontend:latest
             docker run -d --name frontend -p 3000:3000 docker.io/mutuwa12/frontend:latest
 
