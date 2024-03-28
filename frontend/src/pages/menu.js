@@ -45,7 +45,7 @@ function Menu(){
                 </Link>
             </li>
             <li>
-                <Link to="/create-ticket">
+                <Link to="/createticket">
                 <FontAwesomeIcon icon={faTicket} />
                     <p>Create Tickets</p>
                 </Link>
