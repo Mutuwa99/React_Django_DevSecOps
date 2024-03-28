@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Menu from './menu';
 import { showToast } from './toast'
+import $ from 'jquery';
 
 function CreateTicket() { // Changed component name from View to CreateTicket
     const location = useLocation();
