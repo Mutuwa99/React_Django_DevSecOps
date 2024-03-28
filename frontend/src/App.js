@@ -9,6 +9,7 @@ import View from './pages/view'
 import Completed from "./pages/completed";
 import CreateTicket from "./pages/create_ticket";
 
+
 function App() {
   return (
     <div className="App">
@@ -21,7 +22,7 @@ function App() {
           <Route path="/inprogress" element={<Inprogress />} />
           <Route path="/view" element={<View />} />
           <Route path="/completed" element={<Completed />} />
-          <Route path="/create-ticket" element={<CreateTicket />} />
+          <Route path="/createticket" element={<CreateTicket />} />
         </Routes>
 
       </Router>
