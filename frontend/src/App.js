@@ -7,6 +7,7 @@ import Alltick from "./pages/allticket"
 import Inprogress from './pages/inprogress'
 import View from './pages/view'
 import Completed from "./pages/completed";
+import CreateTicket from "./pages/create_ticket";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/inprogress" element={<Inprogress />} />
           <Route path="/view" element={<View />} />
           <Route path="/completed" element={<Completed />} />
+          <Route path="/create-ticket" element={<CreateTicket />} />
         </Routes>
 
       </Router>

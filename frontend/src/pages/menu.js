@@ -45,7 +45,7 @@ function Menu(){
                 </Link>
             </li>
             <li>
-                <Link to="#">
+                <Link to="/create-ticket">
                 <FontAwesomeIcon icon={faTicket} />
                     <p>Create Tickets</p>
                 </Link>
@@ -57,7 +57,7 @@ function Menu(){
                 </Link>
             </li>
             <li className="log-out"> 
-                <Link to="#">
+                <Link to="/">
                     <FontAwesomeIcon icon={faArrowLeft} />
                     <p>Log Out</p>
                 </Link>

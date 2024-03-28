@@ -3,6 +3,10 @@ import {  useNavigate } from 'react-router-dom';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const style = {
+  backgroundColor:'red',
+}
+
 const Welcome = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -40,7 +44,7 @@ const Welcome = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container" style={style}>
       <h2 className="login-heading">React + Django</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <label htmlFor="username" className="login-label">

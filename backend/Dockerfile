@@ -16,13 +16,10 @@ COPY . /app/
 
 # Expose the port your application will run on (change this as needed)
 EXPOSE 8000
+# Define the command to run your application (adjust as needed)
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 CMD ["python", "manage.py", "makemigrations"]
 
 CMD ["python", "manage.py", "migrate"]
-# Define the command to run your application (adjust as needed)
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-
-
-
 #responsible for packaging our app into a docker image ..........

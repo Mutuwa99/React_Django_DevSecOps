@@ -15,10 +15,25 @@ function View() {
         setEditedData({ ...editedData, [name]: value });
     };
 
-    const handleSave = () => {
+    const handleSave = (id) => {
         // Perform save operation, e.g., send editedData to server
         console.log("Saving:", editedData);
         // Add your save logic here
+        $.ajax({
+            url: `http://noble-mutuwa.com:8000/api/tickets/edit/${id}/`,
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(editedData), // Send the editedData as JSON
+            success: (response) => {
+                console.log('Response:', response);
+                
+                showToast('Hey', 'item has been edited');
+            },
+            error: (xhr, status, error) => {
+                console.error('Error:', error);
+                // Handle error
+            }
+        });
     };
 
     return (
@@ -43,7 +58,7 @@ function View() {
                     <option value="invalid">Invalid</option>
                 </select>
             </div>
-            <button  className="savetic" onClick={handleSave}>Save</button>
+            <button  className="savetic" onClick={handleSave(editedData.id)}>Save</button>
         </div>
 
         </>
