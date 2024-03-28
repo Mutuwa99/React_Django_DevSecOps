@@ -51,7 +51,7 @@ def welcome(request):
         return JsonResponse({'success': False, 'message': 'Method not allowed','user': user}, status=405)
 
 @csrf_exempt
-def all_ticket(request):
+def all_tickets(request):
 
     if request.method == 'POST':
         latest_tickets = {'latest_tik': list(Tickets.objects.values())}
