@@ -152,12 +152,12 @@ jobs:
           trivy_report=$(trivy --format json docker.io/mutuwa12/backend:latest)
           echo "$trivy_report"
 
-          # Check if there are any vulnerabilities with severity "CRITICAL"
-          if echo "$trivy_report" | jq '.[0].Vulnerabilities[] | select(.Severity == "CRITICAL")' > /dev/null; then
-            echo "Critical vulnerabilities found. Failing the workflow."
+          # Check if there are any vulnerabilities with severity "HIGH"
+          if echo "$trivy_report" | jq '.[0].Vulnerabilities[] | select(.Severity == "HIGH")' > /dev/null; then
+            echo "High vulnerabilities found. Failing the workflow."
             exit 1
           else
-            echo "No critical vulnerabilities found. Proceeding with the workflow."
+            echo "No high vulnerabilities found. Proceeding with the workflow."
           fi   
           
   trivy_scan_frontend:
@@ -177,14 +177,14 @@ jobs:
           trivy_report=$(trivy --format json docker.io/mutuwa12/frontend:latest)
           echo "$trivy_report"
 
-          # Check if there are any vulnerabilities with severity "CRITICAL"
-          if echo "$trivy_report" | jq '.[0].Vulnerabilities[] | select(.Severity == "CRITICAL")' > /dev/null; then
-            echo "Critical vulnerabilities found. Failing the workflow."
+          # Check if there are any vulnerabilities with severity "HIGH"
+          if echo "$trivy_report" | jq '.[0].Vulnerabilities[] | select(.Severity == "HIGH")' > /dev/null; then
+            echo "HIGH vulnerabilities found. Failing the workflow."
             exit 1
           else
-            echo "No critical vulnerabilities found. Proceeding with the workflow."
-          fi   
-          
+            echo "No high vulnerabilities found. Proceeding with the workflow."
+          fi
+
   deploy_backend:
     needs: trivy_scan_backend
     runs-on: ubuntu-latest
