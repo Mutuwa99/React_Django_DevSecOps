@@ -5,6 +5,7 @@ import json
 from django.contrib.auth.models import User
 from .models import Product, Tickets
 from django.forms.models import model_to_dict
+from django.db import connection
 
 @csrf_exempt
 def welcome(request):
@@ -143,3 +144,17 @@ def edit_ticket(request, id):
             return JsonResponse({'success': False, 'message': 'Method not allowed'}, status=405)
     except Exception as e:
         return JsonResponse({'success': False, 'message': str(e)}, status=500)
+
+
+
+def unsafe_user_lookup(request):
+    username = request.GET.get('username')
+
+    # 🚨 VULNERABLE: unsanitized input used in raw SQL
+    query = f"SELECT * FROM auth_user WHERE username = '{username}'"
+
+    with connection.cursor() as cursor:
+        cursor.execute(query)
+        results = cursor.fetchall()
+
+    return JsonResponse({'users': results})
